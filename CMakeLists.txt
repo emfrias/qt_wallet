@@ -202,8 +202,10 @@ IF( WIN32 )
 	set (CRASHRPT_BIN_DIR_X86 $ENV{CRASHRPT_BIN_DIR_X86})
 	set (CRASHRPT_BIN_DIR_X64 $ENV{CRASHRPT_BIN_DIR_X64})
 	
+	string(REGEX REPLACE "^origin/tags/" "" BUILD_TAG $ENV{GIT_BRANCH})
+	
   configure_file( windows/setup.iss.in setup.iss )
-	configure_file( windows/build_combined_installer.bat.in build_combined_installer.bat )
+	configure_file( windows/combined_installer_config.json.in combined_installer_config.json )
 	configure_file( windows/setup_combined.iss.in setup_combined.iss )
 ENDIF( WIN32 )
 
