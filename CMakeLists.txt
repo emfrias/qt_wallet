@@ -170,10 +170,9 @@ IF( WIN32 )
   		              ERROR_QUIET
 		              OUTPUT_STRIP_TRAILING_WHITESPACE)
 	  if(GIT_DESCRIBE_RESULT EQUAL 0)
-		set(VERSION_STRING ${GIT_DESCRIBE_OUTPUT})
 		# patch up the GIT version tag, which seems to be somewhat arbitrary
 		# convert bts/0.4.10-RC1 -> 0.4.10.1
-		string(REGEX_REPLACE "^(bts|xts|dvs)/" "" VERSION_STRING "${GIT_DESCRIBE_OUTPUT}")
+		string(REGEX_REPLACE "^(bts|xts|dvs)\\/" "" VERSION_STRING "${GIT_DESCRIBE_OUTPUT}")
 		# convert 0.4.10-RC1 -> 0.4.10.1
 		string(REGEX REPLACE "-RC([0-9]+)$" ".\\1" VERSION_STRING_WITHOUT_RC "${VERSION_STRING}")
 		# convert 0.4.10-a to 0.4.10
