@@ -1,6 +1,8 @@
 ; WIN64_DEFINE gets substituted with "define" or "undef"
 #@WIN64_DEFINE@ WIN64
 #define APPNAME "@APP_NAME@"
+#define GUI_CLIENT_EXECUTABLE_NAME "@GUI_CLIENT_EXECUTABLE_NAME@"
+#define CLI_CLIENT_EXECUTABLE_NAME "@CLI_CLIENT_EXECUTABLE_NAME@"
 #define BITSHARES_ROOT "@BITSHARES_ROOT@"
 #define QT_PATH "@QT_PATH@"
 #define OPENSSL_ROOT_DIR "@OPENSSL_ROOT_DIR@"
@@ -41,7 +43,7 @@ SolidCompression=true
 VersionInfoVersion={#NUMERIC_VERSION}
 VersionInfoCompany=BitShares
 VersionInfoDescription={#APPNAME}
-AppCopyright=(c) 2014 BitShares
+AppCopyright=(c) 2015 BitShares
 DirExistsWarning=no
 DisableStartupPrompt=true
 WindowVisible=false
@@ -81,8 +83,8 @@ LanguageCodePage=0
 
 [Files]
 ;Source: README.TXT; DestDir: {app}; Flags: ignoreversion
-Source: {#BITSHARES_ROOT}\bin\{#APPNAME}.exe; DestDir: {app}\bin; Flags: ignoreversion
-Source: ..\client\RelWithDebInfo\bitshares_client.exe; DestDir: {app}\bin; Flags: ignoreversion
+Source: {#BITSHARES_ROOT}\bin\{#GUI_CLIENT_EXECUTABLE_NAME}.exe; DestDir: {app}\bin; Flags: ignoreversion
+Source: ..\client\RelWithDebInfo\{#CLI_CLIENT_EXECUTABLE_NAME}.exe; DestDir: {app}\bin; Flags: ignoreversion
 Source: {#MSVC_RUNTIME_DIR}\msvcr120.dll; DestDir: {app}\bin; Flags: ignoreversion
 Source: {#MSVC_RUNTIME_DIR}\msvcp120.dll; DestDir: {app}\bin; Flags: ignoreversion
 Source: {#OPENSSL_ROOT_DIR}\ssl\openssl.cnf; DestDir: {app}\bin; Flags: ignoreversion

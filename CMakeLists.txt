@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 2.8.11)
 find_package(Git QUIET)
 
 project(qt_wallet)
-set( APP_NAME "BitShares" )
+set( APP_NAME "${GUI_CLIENT_EXECUTABLE_NAME}" )
 
 # Tell CMake where to find our custom Info.plist template
 list( APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/CMakeModules" )
@@ -202,7 +202,7 @@ IF( WIN32 )
 	set (CRASHRPT_BIN_DIR_X86 $ENV{CRASHRPT_BIN_DIR_X86})
 	set (CRASHRPT_BIN_DIR_X64 $ENV{CRASHRPT_BIN_DIR_X64})
 	
-    configure_file( windows/setup.iss.in setup.iss )
+  configure_file( windows/setup.iss.in setup.iss )
 	configure_file( windows/build_combined_installer.bat.in build_combined_installer.bat )
 	configure_file( windows/setup_combined.iss.in setup_combined.iss )
 ENDIF( WIN32 )
