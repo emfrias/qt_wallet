@@ -130,18 +130,18 @@ Source: {#CRASHRPT_DIR}\bin{#CRASHRPT_PLATFORM_DIR}\dbghelp.dll; DestDir: {app}\
 #endif
 
 [Icons]
-Name: {group}\{#APPNAME}; Filename: {app}\bin\{#APPNAME}.exe; WorkingDir: {app}\bin; IconIndex: 0
+Name: {group}\{#APPNAME}; Filename: {app}\bin\{#GUI_CLIENT_EXECUTABLE_NAME}.exe; WorkingDir: {app}\bin; IconIndex: 0
 Name: "{group}\Uninstall {#APPNAME}"; Filename: "{uninstallexe}"
-Name: {userdesktop}\{#APPNAME}; Filename: {app}\bin\{#APPNAME}.exe; WorkingDir: {app}\bin; IconIndex: 0
+Name: {userdesktop}\{#APPNAME}; Filename: {app}\bin\{#GUI_CLIENT_EXECUTABLE_NAME}.exe; WorkingDir: {app}\bin; IconIndex: 0
 
 [Run]
-Filename: {app}\bin\{#APPNAME}.exe; Flags: postinstall; Description: Run
+Filename: {app}\bin\{#GUI_CLIENT_EXECUTABLE_NAME}.exe; Flags: postinstall; Description: Run
 
 [Registry]
 Root: HKCR; Subkey: "{#CUSTOM_URL_SCHEME}"; Flags: uninsdeletekey; ValueType: none;
 Root: HKCR; Subkey: "{#CUSTOM_URL_SCHEME}"; ValueType: string; ValueName: "URL Protocol"; ValueData: "";
 Root: HKCR; Subkey: "{#CUSTOM_URL_SCHEME}\shell"; Flags: uninsdeletekey; ValueType: none
 Root: HKCR; Subkey: "{#CUSTOM_URL_SCHEME}\shell\open"; Flags: uninsdeletekey; ValueType: none
-Root: HKCR; Subkey: "{#CUSTOM_URL_SCHEME}\shell\open\command"; Flags: uninsdeletekey; ValueType: string; ValueName: ""; ValueData: "{app}\bin\{#APPNAME}.exe %1";
+Root: HKCR; Subkey: "{#CUSTOM_URL_SCHEME}\shell\open\command"; Flags: uninsdeletekey; ValueType: string; ValueName: ""; ValueData: "{app}\bin\{#GUI_CLIENT_EXECUTABLE_NAME}.exe %1";
 
 [Code]
